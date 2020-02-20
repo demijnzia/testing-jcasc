@@ -1,9 +1,14 @@
 pipeline {
     agent any
+
+    parameters {
+        booleanParam(defaultValue: true, description: '', name: 'userFlagged')
+    }
+
     stages {
-        stage ('test') {
+        stage("foo") {
             steps {
-                echo "hello"
+                echo "flag: ${params.userFlag}"
             }
         }
     }

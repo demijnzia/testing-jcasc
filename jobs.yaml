@@ -1,0 +1,16 @@
+jobs:
+  - script: >
+      pipelineJob('DSA Installation') {
+          definition {
+              cpsScm {
+                  scriptPath 'Jenkinsfile'
+                  scm {
+                    git {
+                      remote { url 'https://github.com/demijnzia/testing-jcasc.git' }
+                      branch '*/master'
+                        extensions {}
+                    }
+                  }
+              }
+          }
+      }
